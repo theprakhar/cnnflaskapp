@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html>
+<head>
+	<title>Image Classifier</title>
+</head>
+
+
+<style>
+body {
+  font: 14px courier;
+  color:grey;
+  margin:0;
+  height:100%
+  background-color:#111111;
+  background-image:radial-gradient(#202020,#111111,#111111 );
+  
+
+}
+h1 {
+  color: white;
+  font-family: verdana;
+  border-bottom: 2px solid #008CBA;
+  font-size: 250%;
+  margin:0 0 0 0;
+  text-align: center;
+  background-color:#262626;
+  padding: 2% 0% 1% 0%;
+  background-image:linear-gradient(to right,#111111,#111111,#303030,#111111,#111111 );
+
+}
+h2 {
+  color: #c4c4c4;
+  font-family: verdana;
+  font-size: 140%;
+  text-align: center;
+  padding: 1% 0% 0% 0%;
+
+}
+h3 {
+  color: #deebff;
+  font-family: verdana;
+  font-size: 140%;
+  text-align: center;
+
+}
+p  {
+  color: grey;
+  font-family: Arial;
+  font-size: 110%;
+  text-align: center;
+}
+.button {
+  background-color: #008CBA; 
+  border: none;
+  color: white;
+  border-radius: 12px;
+  padding: 10px 27px;
+  text-align: center;
+  font-family: verdana;
+  display: inline-block;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+input[type=text] {
+  width: 80%;
+  box-sizing: border-box;
+  border: 2px solid #008CBA;
+  border-radius: 4px;
+  font-size: 10px;
+  background-color: white;
+  
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 12px;
+  margin: 1% 10% 1% 10%;
+}
+.customlay{ }
+.centerimage{
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  width: 50%;}
+  </style>
+
+
+<body >
+<h1>Image Classifier</h1>
+
+<h2><b>Image classification using Convolution Neural Network</b></h2>
+<p><i>The network could successfully classify images of Aeroplane,Automobile,Bird,Cat,Deer,Dog,Frog,Horse,Ship and Truck with around 86% accuracy.</i></p>
+
+<form action="/predict/" method="POST">
+
+
+<br>
+  <input type="text" name="image_location" placeholder="Enter Image URL/Location.." >
+  
+ 
+<br>
+ <p></p>
+ <p>
+<button type="submit" class="button" margin="10%">
+  Predict
+</button>
+
+
+<button type="reset" class="button">Reset</button></p>
+</form>
+<p>
+{% if outputz %}
+<h3>{{outputz}}</h3><br>
+
+{% endif %}
+
+<img src="{{location}}" class="centerimage"/>
+</p>
+
+
+</body>
+</html>
